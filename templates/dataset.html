@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数据集管理</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('index') }}">首页</a></li>
+            <li><a href="{{ url_for('upload') }}">上传图片</a></li>
+            <li><a href="{{ url_for('dataset') }}">数据集管理</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>数据集管理</h1>
+
+        <div class="dataset-list">
+            {% for ds in datasets %}
+            <div class="dataset-item">
+                <h3>{{ ds.name }}</h3>
+                <p>图像数量: {{ ds.count }}</p>
+                <a href="{{ url_for('dataset_detail', dataset_name=ds.name) }}">查看详情</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

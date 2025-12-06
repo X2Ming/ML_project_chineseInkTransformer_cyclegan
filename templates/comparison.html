@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片处理对比</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('index') }}">首页</a></li>
+            <li><a href="{{ url_for('upload') }}">上传图片</a></li>
+            <li><a href="{{ url_for('dataset') }}">数据集管理</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="success-message">
+            图片处理成功！请查看下面的对比结果。
+        </div>
+
+        <div class="comparison-container">
+            <!-- 原始图片 -->
+            <div class="comparison-card">
+                <h3>原始图片</h3>
+                <img src="{{ original_image }}" alt="Original Image">
+            </div>
+
+            <!-- 处理后图片 -->
+            <div class="comparison-card">
+                <h3>国风处理后图片</h3>
+                <img src="{{ processed_image }}" alt="Processed Image">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

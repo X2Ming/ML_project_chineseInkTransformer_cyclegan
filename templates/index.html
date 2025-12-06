@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>国风图片展示与生成</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('index') }}">首页</a></li>
+            <li><a href="{{ url_for('upload') }}">上传图片</a></li>
+            <li><a href="{{ url_for('dataset') }}">数据集管理</a></li>
+        </ul>
+    </div>
+
+    <!-- 主体容器 -->
+    <div class="container">
+        <h1>欢迎使用国风图片生成与展示平台</h1>
+
+        <!-- 仪表盘 -->
+        <div class="dashboard">
+            <div class="stat-card">
+                <h3>总图像数</h3>
+                <p>——</p>
+            </div>
+            <div class="stat-card">
+                <h3>已处理图像</h3>
+                <p>——</p>
+            </div>
+            <div class="stat-card">
+                <h3>待处理图像</h3>
+                <p>——</p>
+            </div>
+        </div>
+
+        <!-- 最近图片（后面有空可以改成真实数据） -->
+        <div class="recent-images">
+            <h3>最近上传的图像</h3>
+            <div class="image-gallery">
+                <div class="image-item">暂无图片，去上传一张试试吧～</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
