@@ -87,15 +87,24 @@ python train.py --dataroot ./datasets/your_dataset --name experiment_clip --mode
 
 ## 📂 数据集 (Dataset)
 
-请按照以下结构组织您的数据集：
-```
+本项目使用 **Chinese Landscape Painting Dataset** 进行训练。
+
+### 1. 数据下载 (Download)
+请前往 Kaggle 下载原始数据集：
+👉 [Chinese Landscape Painting Dataset by myzhang1029](https://www.kaggle.com/datasets/myzhang1029/chinese-landscape-painting-dataset/data)
+
+### 2. 数据准备 (Preparation)
+下载并解压后，请按照 CycleGAN 的标准目录结构整理文件。你需要创建 `datasets/chinese_landscape` 文件夹，并将图片分类放入 `trainA` (自然风景) 和 `trainB` (水墨画) 中。
+
+**目录结构示例：**
+
+```text
 datasets/
-    your_dataset/
-        trainA/  # 自然风景图片
-        trainB/  # 水墨画图片
-        testA/
-        testB/
-```
+  └── chinese_landscape/        # 数据集根目录
+      ├── trainA/               # 放自然风景照片 (Source Domain)
+      ├── trainB/               # 放水墨画图片 (Target Domain)
+      ├── testA/                # (可选) 用于测试的自然风景照片
+      └── testB/                # (可选) 用于测试的水墨画图片
 
 ## 🙏 致谢 (Acknowledgements)
 
